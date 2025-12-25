@@ -1,5 +1,7 @@
-
 from util.common_imports import *
+
+# https://leetcode.cn/problems/combination-sum-ii/
+
 
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
@@ -8,7 +10,8 @@ class Solution:
         n = len(candidates)
 
         def backtrack(start, cur_tar, cur_list):
-            if start == n: return
+            if start == n:
+                return
 
             nonlocal ans
             cur_cand = candidates[start]
@@ -16,7 +19,8 @@ class Solution:
                 cur_list.append(cur_cand)
                 ans.append(cur_list)
                 return
-            if cur_cand > cur_tar: return
+            if cur_cand > cur_tar:
+                return
 
             count_cur = 1
             start += 1
@@ -38,5 +42,6 @@ class Solution:
         backtrack(0, target, [])
         return ans
 
-print(Solution().combinationSum2(candidates = [10,1,2,7,6,1,5], target = 8))
-print(Solution().combinationSum2(candidates = [2,5,2,1,2], target = 5))
+
+print(Solution().combinationSum2(candidates=[10, 1, 2, 7, 6, 1, 5], target=8))
+print(Solution().combinationSum2(candidates=[2, 5, 2, 1, 2], target=5))

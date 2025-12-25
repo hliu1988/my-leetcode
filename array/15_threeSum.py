@@ -1,3 +1,5 @@
+# https://leetcode.cn/problems/3sum/description/
+
 class Solution:
     def threeSum(self, nums):
         nums.sort()
@@ -28,3 +30,9 @@ class Solution:
 
 # print(Solution().threeSum([0, 0, 0, 0]))
 print(Solution().threeSum([-1, 0, 1, 2, -1, -4]))  # [[-1,-1,2],[-1,0,1]]
+
+# sort: -4, -1, -1, 0, 1, 2
+# i=-4, j从-1开始，k从2开始
+# i=-1, j从-1开始，k从2开始 => [-1,-1,2], [-1,0,1]
+# i=-1, j从0开始，k从2开始  => 上面已经计算过了，重复了，跳过
+# i=0, j从1开始，k从2开始 不符合

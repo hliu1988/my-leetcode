@@ -4,9 +4,13 @@
 #         self.val = x
 #         self.next = None
 
+from typing import Optional, ListNode
+
+# https://leetcode.cn/problems/linked-list-cycle/
+
 
 class Solution:
-    def hasCycle(self, head: ListNode) -> bool:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
         if not head or not head.next:
             return False
 
@@ -19,4 +23,6 @@ class Solution:
                 n2 = n2.next.next
 
         return n1 == n2
-        
+
+# 142 环形链表 II
+# https://leetcode.cn/problems/linked-list-cycle-ii/description/

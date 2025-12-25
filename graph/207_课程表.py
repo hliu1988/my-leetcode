@@ -1,6 +1,9 @@
 from util.common_imports import *
+# https://leetcode.cn/problems/course-schedule/
 
 # 图的拓扑排序
+
+
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         graphs = defaultdict(list)
